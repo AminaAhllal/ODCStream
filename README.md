@@ -90,6 +90,84 @@ npx create-next-app@latest my-app --typescript --tailwing --eslint
 npx shadcn-ui@latest init
 ```
 
+# Intégration du SDK vidéo GetStream
+
+Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
 
 
+## 1. Inscription à GetStream et clés API
 
+1. **Inscrivez-vous** : [GetStream.io](https://getstream.io/)  
+   Créez un compte pour accéder aux clés API.
+
+2. **Obtenez les clés API** :  
+   Allez dans **Tableau de bord** > **Application de production** pour trouver vos clés API :
+   - **Clé API publique**
+   - **Clé secrète**
+
+3. **Ajoutez les clés API dans `.env`** :
+   Créez un fichier `.env` à la racine de votre projet et ajoutez les clés :
+
+   ```bash
+   NEXT_PUBLIC_STREAM_API_KEY=your_api_public_key
+   STREAM_SECRET_KEY=your_secret_key
+
+## 2. Installation
+
+Installez les packages nécessaires pour les opérations côté client et côté serveur.
+
+### Installer le SDK vidéo React GetStream
+
+Avec **yarn** :
+
+```bash
+yarn add @stream-io/video-react-sdk
+```
+
+Ou avec npm :
+
+```bash
+npm install @stream-io/video-react-sdk
+```
+
+### Installer le SDK Node GetStream
+Pour les opérations côté serveur, installez le SDK Node GetStream :
+
+```bash
+npm install @stream-io/node-sdk
+```
+
+## 3. Configuration du client
+- Créer un fournisseur de client Stream
+- Créez un dossier nommé providers à la racine de votre projet.
+- À l'intérieur du dossier providers, créez un fichier nommé StreamClientProvider.tsx.
+- Configurez le StreamClientProvider en utilisant les clés API de votre fichier .env
+
+## 4. Client côté serveur
+- Créez un dossier nommé actions, et à l'intérieur, ajoutez un fichier Stream.actions.ts pour gérer les opérations côté serveur, notamment la création d'utilisateurs et de jetons utilisateurs.
+
+## 5. Créer une réunion
+- Pour créer une nouvelle réunion (appel vidéo), encapsulez votre application entière dans le composant StreamVideoProvider. Ensuite, créez une fonction createMeeting pour initialiser l'appel
+
+## 6. Récupérer les appels par ID
+- Pour récupérer un appel par son ID, créez un hook personnalisé useGetCallById qui filtre les appels en fonction de l'ID donné
+
+## 7. Emballer votre application
+Assurez-vous d'encapsuler votre application entière dans le StreamClientProvider pour garantir l'accès au client Stream dans toute votre application.
+
+```bash
+
+import { StreamClientProvider } from './providers/StreamClientProvider';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <StreamClientProvider>
+      <Component {...pageProps} />
+    </StreamClientProvider>
+  );
+}
+
+export default MyApp;
+
+
+```
