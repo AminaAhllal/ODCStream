@@ -144,7 +144,7 @@ npm install @stream-io/node-sdk
 - Configurez le StreamClientProvider en utilisant les clés API de votre fichier .env
 
 ## 4. Client côté serveur
-- Créez un dossier nommé actions, et à l'intérieur, ajoutez un fichier Stream.actions.ts pour gérer les opérations côté serveur, notamment la création d'utilisateurs et de jetons utilisateurs.
+- Créez un dossier nommé actions, et à l'intérieur, ajoutez un fichier Stream.actions.ts pour gérer les opérations côté serveur, notamment la création d'utilisateurs et de jetons utilisateurs [creatToken](https://getstream.io/video/docs/api/#creating-users-and-user-tokens).
 
 ## 5. Créer une réunion
 - Pour créer une nouvelle réunion (appel vidéo), encapsulez votre application entière dans le composant StreamVideoProvider. Ensuite, créez une fonction createMeeting pour initialiser l'appel
