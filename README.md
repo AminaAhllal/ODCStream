@@ -42,8 +42,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 ```bash
 git clone https://github.com/AminaAhllal/Zoom-Clone.git
-cd Zoomclone
-cd
+cd Zoom-Clone
 ```
 
 **Installation**
@@ -51,6 +50,34 @@ Installez les dépendances du projet en utilisant npm :
 ```bash
 npm install
 ```
+**Configuration des Variables d'Environnement**
+Créez un nouveau fichier nommé .env à la racine de votre projet et ajoutez le contenu suivant :
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 
-# Zoom-Clone
-Ce dépôt contient le code d'un tutoriel complet disponible . C'est une excellente ressource pour ceux qui préfèrent apprendre en pratique. Suivez le tutoriel de ce dépôt pour apprendre à créer des projets comme celui-ci, étape par étape, de manière accessible aux débutants !
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+NEXT_PUBLIC_STREAM_API_KEY=
+STREAM_SECRET_KEY=
+```
+Remplacez les valeurs de remplacement par vos identifiants réels Clerk et GetStream. Vous pouvez obtenir ces identifiants en vous inscrivant sur le site web de [Clerk](https://clerk.com/) et de [Getstream](https://getstream.io/).
+
+ **Avant de lancer le projet**
+
+Pour bénéficier des dernières fonctionnalités et corrections de bugs, il est recommandé de rester à jour avec les versions les plus récentes du projet. Assurez-vous d'exécuter les commandes suivantes pour mettre à jour le projet avant de le lancer :
+```bash
+npm i next@latest
+```
+**🔍 Visualiser le Projet**
+
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour visualiser le projet.
+
+**🔗 Liens**
+
+Les ressources publiques utilisées dans le projet peuvent être trouvées [ici](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
+
+
+
+
