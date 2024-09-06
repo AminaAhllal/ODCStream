@@ -90,6 +90,14 @@ npx create-next-app@latest my-app --typescript --tailwing --eslint
 npx shadcn-ui@latest init
 ```
 
+## **Sheet**
+Étend le composant Dialog pour afficher du contenu qui complète le contenu principal de l'écran.
+
+**Installation**
+```bash
+npx shadcnui-@latestadd sheet
+```
+
 # Intégration du SDK vidéo GetStream
 
 Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
