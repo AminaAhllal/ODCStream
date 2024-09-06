@@ -147,10 +147,10 @@ npm install @stream-io/node-sdk
 - Créez un dossier nommé actions, et à l'intérieur, ajoutez un fichier Stream.actions.ts pour gérer les opérations côté serveur, notamment la création d'utilisateurs et de jetons utilisateurs [creatToken](https://getstream.io/video/docs/api/#creating-users-and-user-tokens).
 
 ## 5. Créer une réunion
-- Pour créer une nouvelle réunion (appel vidéo), encapsulez votre application entière dans le composant StreamVideoProvider. Ensuite, créez une fonction createMeeting pour initialiser l'appel
+- Pour créer une nouvelle réunion (appel vidéo), encapsulez votre application entière dans le composant StreamVideoProvider. Ensuite, créez une fonction createMeeting pour initialiser l'appel [creatacall](https://getstream.io/video/docs/api/#creating-a-call)
 
 ## 6. Récupérer les appels par ID
-- Pour récupérer un appel par son ID, créez un hook personnalisé useGetCallById qui filtre les appels en fonction de l'ID donné
+- Pour récupérer un appel par son ID, créez un hook personnalisé useGetCallById qui filtre les appels en fonction de l'ID donné 
 
 ## 7. Emballer votre application
 Assurez-vous d'encapsuler votre application entière dans le StreamClientProvider pour garantir l'accès au client Stream dans toute votre application.
