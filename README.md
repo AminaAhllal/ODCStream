@@ -105,6 +105,11 @@ Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre p
 
 ## 1. Inscription à GetStream et clés API
 
+
+![Nouveau projet (2)](https://github.com/user-attachments/assets/4c63d475-93c2-4c0a-8098-375100c7bb35)
+
+
+
 1. **Inscrivez-vous** : [GetStream.io](https://getstream.io/)  
    Créez un compte pour accéder aux clés API.
 
