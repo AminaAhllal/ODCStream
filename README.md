@@ -70,10 +70,26 @@ Pour bénéficier des dernières fonctionnalités et corrections de bugs, il est
 ```bash
 npm i next@latest
 ```
-# **🔍 Visualiser le Projet**
+## **🔍 Visualiser le Projet**
 
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour visualiser le projet.
 
-# **🔗 Liens**
+## **🔗 Liens**
 
 Les ressources publiques utilisées dans le projet peuvent être trouvées [ici](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
+
+# **🛠️ Processus de Création de l'App Zoom Clone**
+1 - Creer un dossier sous le nom Zoom-Clone.
+
+2 - Accédez au site [Shadcn/ui](https://ui.shadcn.com/docs/installation/next),copier la commande suivant et remplacer (my-app) par ./:
+```bash
+npx create-next-app@latest my-app --typescript --tailwing --eslint 
+```
+3 - Pour initialiser le projet avec Shadcn UI utilisez la commande:
+```bash
+npx shadcn-ui@latest init
+```
+
+
+
+
