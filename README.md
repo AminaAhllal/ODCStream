@@ -64,16 +64,16 @@ STREAM_SECRET_KEY=
 ```
 Remplacez les valeurs de remplacement par vos identifiants réels Clerk et GetStream. Vous pouvez obtenir ces identifiants en vous inscrivant sur le site web de [Clerk](https://clerk.com/) et de [Getstream](https://getstream.io/).
 
- ⏩**Avant de lancer le projet**
+# ⏩**Avant de lancer le projet**
 
 Pour bénéficier des dernières fonctionnalités et corrections de bugs, il est recommandé de rester à jour avec les versions les plus récentes du projet. Assurez-vous d'exécuter les commandes suivantes pour mettre à jour le projet avant de le lancer :
 ```bash
 npm i next@latest
 ```
-**🔍 Visualiser le Projet**
+# **🔍 Visualiser le Projet**
 
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour visualiser le projet.
 
-**🔗 Liens**
+# **🔗 Liens**
 
 Les ressources publiques utilisées dans le projet peuvent être trouvées [ici](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
