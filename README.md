@@ -39,18 +39,18 @@ Make sure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/en)
 - [ npm](https://www.npmjs.com/) (Node Package Manager)
 
-**Cloning the Repository**
+📂 **Cloning the Repository**
 ```bash
 git clone https://github.com/AminaAhllal/Zoom-Clone.git
 cd Zoom-Clone
 ```
 
-**Installation**
+🛠️**Installation**
 Installez les dépendances du projet en utilisant npm :
 ```bash
 npm install
 ```
-**Configuration des Variables d'Environnement**
+⚙️**Configuration des Variables d'Environnement**
 Créez un nouveau fichier nommé .env à la racine de votre projet et ajoutez le contenu suivant :
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
@@ -64,7 +64,7 @@ STREAM_SECRET_KEY=
 ```
 Remplacez les valeurs de remplacement par vos identifiants réels Clerk et GetStream. Vous pouvez obtenir ces identifiants en vous inscrivant sur le site web de [Clerk](https://clerk.com/) et de [Getstream](https://getstream.io/).
 
- **Avant de lancer le projet**
+ ⏩**Avant de lancer le projet**
 
 Pour bénéficier des dernières fonctionnalités et corrections de bugs, il est recommandé de rester à jour avec les versions les plus récentes du projet. Assurez-vous d'exécuter les commandes suivantes pour mettre à jour le projet avant de le lancer :
 ```bash
@@ -77,7 +77,3 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour
 **🔗 Liens**
 
 Les ressources publiques utilisées dans le projet peuvent être trouvées [ici](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
-
-
-
-
