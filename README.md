@@ -98,7 +98,82 @@ npx shadcn-ui@latest init
 npx shadcnui-@latestadd sheet
 ```
 
-# Intégration du SDK vidéo GetStream
+# Intégration du Clerk:
+
+# 1 **Installer @clerk/nextjs**
+```bash
+npm install @clerk/nextjs
+```
+
+# 2 **Configuration des Variables d'Environnement**
+
+Ajoutez les clés suivantes à votre fichier **.env Vous pouvez toujours retrouver ces clés sur la page des clés API de votre tableau de bord Clerk.
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+```
+
+# 3 **🛠️ Ajouter un Middleware à votre Application**
+- Créer un Fichier Middleware
+
+- Créez un fichier nommé **middleware.ts** à la racine de votre projet.
+
+- Exporter le Middleware de Clerk
+
+- Dans votre fichier middleware.ts, exportez l'assistant clerkMiddleware() de Clerk :
+  ```bash
+  import { clerkMiddleware } from '@clerk/nextjs/server'
+
+export default clerkMiddleware()
+
+export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Intégration du SDK vidéo GetStream:
 
 Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
 
@@ -184,3 +259,5 @@ export default MyApp;
 
 
 ```
+
+
