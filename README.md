@@ -173,6 +173,7 @@ export const config = {
 
 
 
+
 # Intégration du SDK vidéo GetStream:
 
 Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
