@@ -1,45 +1,47 @@
-# 📝 Projet: Développement d'une Application de Zoom-Clone
+# 📝 Project: Zoom-Clone Application Development
 
-## 🎯 Objectif
+## 🎯 Objective
 
-Le but de ce projet, développé avec les dernières versions de Next.js et TypeScript, est de reproduire les fonctionnalités d'un outil de visioconférence populaire comme Zoom. Il permet aux utilisateurs de se connecter en toute sécurité, de créer des réunions et d'accéder à diverses fonctionnalités telles que l'enregistrement, le partage d'écran et la gestion des participants. 
+The goal of this project, developed with the latest versions of Next.js and TypeScript, is to replicate the functionalities of a popular video conferencing tool like Zoom. It allows users to securely sign in, create meetings, and access various features such as recording, screen sharing, and participant management.
 
-## 📋 Fonctionnalités de l'application
+## 📋 Application Features
 
-👉 **Authentification** : Implémente des fonctionnalités d'authentification et d'autorisation avec Clerk, permettant aux utilisateurs de se connecter en toute sécurité via les réseaux sociaux ou des méthodes traditionnelles comme l'email et le mot de passe, tout en garantissant des niveaux d'accès et des permissions appropriés sur la plateforme.
+👉 **Authentication**: Implements authentication and authorization features with Clerk, allowing users to securely sign in via social networks or traditional methods like email and password, while ensuring appropriate levels of access and permissions on the platform.
 
-👉 **Nouvelle Réunion** : Lancez rapidement une nouvelle réunion en configurant les paramètres de caméra et de microphone avant de rejoindre.
+👉 **New Meeting**: Quickly launch a new meeting by configuring camera and microphone settings before joining.
 
-👉 **Contrôles de Réunion** : Les participants ont un contrôle total sur divers aspects de la réunion, y compris l'enregistrement, les réactions par emoji, le partage d'écran, la gestion du son, le mode muet/non muet, l'agencement en grille, la vue de la liste des participants, ainsi que la gestion individuelle des participants (épingler, rendre muet, autoriser, bloquer, etc.).
+👉 **Meeting Controls**: Participants have full control over various aspects of the meeting, including recording, emoji reactions, screen sharing, sound management, mute/unmute, grid layout, participant list view, and individual participant management (pin, mute, allow, block, etc.).
 
-👉 **Quitter la Réunion** : Les participants peuvent quitter une réunion ou les créateurs peuvent mettre fin à la réunion pour tous les participants.
+👉 **Leave Meeting**: Participants can leave a meeting, or creators can end the meeting for all participants.
 
-👉 **Planification de Réunions Futures** : Saisissez les détails de la réunion (date, heure) pour planifier des réunions futures, accessibles depuis la page "Réunions à venir" pour partager le lien ou démarrer immédiatement.
+👉 **Schedule Future Meetings**: Enter meeting details (date, time) to schedule future meetings, accessible from the "Upcoming Meetings" page to share the link or start immediately.
 
-👉 **Liste des Réunions Passées** : Accédez à une liste des réunions précédemment tenues, avec tous les détails et métadonnées.
+👉 **Past Meetings List**: Access a list of previously held meetings, with all details and metadata.
 
-👉 **Visionner les Réunions Enregistrées** : Accédez aux enregistrements des réunions passées pour les revoir ou s'y référer.
+👉 **View Recorded Meetings**: Access recordings of past meetings for review or reference.
 
-👉 **Salle Personnelle** : Chaque utilisateur dispose d'une salle personnelle avec un lien de réunion unique pour des réunions instantanées, facilement partageable.
+👉 **Personal Room**: Each user has a personal room with a unique meeting link for instant meetings, easily shareable.
 
-👉 **Rejoindre des Réunions via Lien** : Rejoignez facilement des réunions créées par d'autres en utilisant un lien.
+👉 **Join Meetings via Link**: Easily join meetings created by others using a link.
 
-👉 **Fonctionnalité Sécurisée en Temps Réel** : Toutes les interactions sur la plateforme sont sécurisées et se déroulent en temps réel, préservant la confidentialité des utilisateurs et l'intégrité des données.
+👉 **Secure Real-Time Functionality**: All interactions on the platform are secure and happen in real-time, preserving user privacy and data integrity.
 
-👉 **Design Réactif** : Suivi des principes de design réactif pour garantir une expérience utilisateur optimale sur tous les appareils, s'adaptant aux différentes tailles d'écran et résolutions.
+👉 **Responsive Design**: Follows responsive design principles to ensure an optimal user experience on all devices, adapting to different screen sizes and resolutions.
 
-# Quick Start
+## 🛠️ Quick Start
+
 Follow these steps to set up the project locally on your machine.
 
- **Prerequisites**
+### Prerequisites
 
 Make sure you have the following installed on your machine:
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en)
-- [ npm](https://www.npmjs.com/) (Node Package Manager)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
 
-📂 **Cloning the Repository**
+### 📂 Cloning the Repository
+
 ```bash
 git clone https://github.com/AminaAhllal/Zoom-Clone.git
 cd Zoom-Clone
@@ -90,7 +92,7 @@ npx create-next-app@latest my-app --typescript --tailwing --eslint
 npx shadcn-ui@latest init
 ```
 
-## **Sheet**
+## 📜**Sheet**
 Étend le composant Dialog pour afficher du contenu qui complète le contenu principal de l'écran.
 
 **Installation**
@@ -98,14 +100,14 @@ npx shadcn-ui@latest init
 npx shadcnui-@latestadd sheet
 ```
 
-# Intégration du Clerk:
+# 🔑Intégration du Clerk:
 
 # 1 **Installer @clerk/nextjs**
 ```bash
 npm install @clerk/nextjs
 ```
 
-# 2 **Configuration des Variables d'Environnement**
+# 2 ⚙️ Environment Variables Configuration
 
 Ajoutez les clés suivantes à votre fichier **.env Vous pouvez toujours retrouver ces clés sur la page des clés API de votre tableau de bord Clerk.
 ```bash
@@ -121,12 +123,12 @@ CLERK_SECRET_KEY=
 - Exporter le Middleware de Clerk
 
 - Dans votre fichier middleware.ts, exportez l'assistant clerkMiddleware() de Clerk :
-  ```bash
+```bash
   import { clerkMiddleware } from '@clerk/nextjs/server'
 
-export default clerkMiddleware()
+  export default clerkMiddleware()
 
-export const config = {
+  export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params
     '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
@@ -136,43 +138,56 @@ export const config = {
 }
 ```
 
+# **Sign into clerk account**
+- Go to [Clerk](https://clerk.com/)
+- Cliquez sur Dashboard après avoir créé votre compte.
+-Cliquez sur Create application.
+-Choisissez vos options de connexion et ajoutez le nom de votre application.
 
+![Capre](https://github.com/user-attachments/assets/f1b59aaa-d386-4490-ac1c-89df6b424857)
 
+-Ensuite, copiez vos propres variables d'environnement personnalisées.
+-Allez dans le fichier middleware.ts et ajoutez :
+  ```bash
+  import { clerkMiddleware,createRouterMatcher } from '@clerk/nextjs/server'
+  const protectedRoutes = createRouterMatcher([
+  '/',
+  '/upcoming',
+  '/previous',
+  '/recordings,
+  '/personal-room',
+  '/meeting(.*)'
+  ])
+  export default clerkMiddleware((auth, req)=>{
+  if protectedRoutes(req)) auth().protect();
+  export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+    ],
+  }
+  ```
+- Allez dans **.env** and add
+  ```bash
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up```
 
+-  Allez dans **sign-in** folder and add a folder named **[[...sign-in]]** and add a **page.tsx** inside that forlder then add this code
+  ```bash
+  import { SignIn } from '@clerk/nextjs';
 
+export default function SiginInPage() {
+  return (
+    <main className="flex h-screen w-full items-center justify-center">
+      <SignIn />
+    </main>
+  );
+}
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Faites la même chose pour le dossier sign-up en remplaçant SignIn par SignUp et SignInPage par SignUpPage.
 
 # Intégration du SDK vidéo GetStream:
 
