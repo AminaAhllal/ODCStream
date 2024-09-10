@@ -2,7 +2,7 @@
 
 ## 🎯 Objective
 
-The goal of this project, developed with the latest versions of Next.js and TypeScript, is to replicate the functionalities of a popular video conferencing tool like Zoom. It allows users to securely sign in, create meetings, and access various features such as recording, screen sharing, and participant management.
+The goal of this project, developed with the latest versions of Next.js and TypeScript, is to deploy the functionalities of a popular video conferencing tool like Zoom. It allows users to securely sign in, create meetings, and access various features such as recording, screen sharing, and participant management.
 
 ## 📋 Application Features
 
