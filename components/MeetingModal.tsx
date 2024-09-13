@@ -47,7 +47,7 @@ const MeetingModal = ({
           {children}
           <Button
             className={
-              "bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+              "bg-[#252A41] focus-visible:ring-0 focus-visible:ring-offset-0"
             }
             onClick={handleClick}
           >
@@ -60,7 +60,7 @@ const MeetingModal = ({
               />
             )}{" "}
             &nbsp;
-            {buttonText || "Schedule Meeting"}
+            {buttonText || "Planifier une réunion"}
           </Button>
         </div>
       </DialogContent>

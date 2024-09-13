@@ -2,29 +2,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
 import { sidebarLinks } from '@/constants';
 import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const linkStyle = {
+    display: 'flex',
+    gap: '1rem',
+    alignItems: 'center',
+    padding: '1rem',
+    borderRadius: '0.5rem',
+    justifyContent: 'flex-start',
+    transition: 'background-color 0.3s ease', 
+  };
 
   return (
-    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between  bg-dark-1 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
+    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col justify-between bg-dark-1 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
       <div className="flex flex-1 flex-col gap-6">
         {sidebarLinks.map((item) => {
           const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
-          
+
           return (
             <Link
               href={item.route}
               key={item.label}
               className={cn(
-                'flex gap-4 items-center p-4 rounded-lg justify-start',
+                'flex gap-4 items-center rounded-lg',
                 {
                   'bg-blue-1': isActive,
                 }
               )}
+              style={linkStyle} 
             >
               <Image
                 src={item.imgURL}

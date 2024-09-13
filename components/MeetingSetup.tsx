@@ -61,7 +61,7 @@ const MeetingSetup = ({
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white">
-      <h1 className="text-center text-2xl font-bold">Setup</h1>
+      <h1 className="text-center text-2xl font-bold">Configuration</h1>
       <VideoPreview />
       <div className="flex h-16 items-center justify-center gap-3">
         <label className="flex items-center justify-center gap-2 font-medium">
@@ -70,7 +70,7 @@ const MeetingSetup = ({
             checked={isMicCamToggled}
             onChange={(e) => setIsMicCamToggled(e.target.checked)}
           />
-          Join with mic and camera off
+          Rejoindre avec le microphone et la caméra éteints
         </label>
         <DeviceSettings />
       </div>
@@ -82,7 +82,7 @@ const MeetingSetup = ({
           setIsSetupComplete(true);
         }}
       >
-        Join meeting
+        Rejoindre la réunion
       </Button>
     </div>
   );

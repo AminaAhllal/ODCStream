@@ -8,7 +8,7 @@ import MeetingCard from './MeetingCard';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
+const CallList = ({ type }: { type: 'Terminé' | 'Prochain' | 'enregistrements' }) => {
   const router = useRouter();
   const { endedCalls, upcomingCalls, callRecordings, isLoading } =
     useGetCalls();
@@ -16,11 +16,11 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
 
   const getCalls = () => {
     switch (type) {
-      case 'ended':
+      case 'Terminé':
         return endedCalls;
-      case 'recordings':
+      case 'enregistrements':
         return recordings;
-      case 'upcoming':
+      case 'Prochain':
         return upcomingCalls;
       default:
         return [];
@@ -29,12 +29,12 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
 
   const getNoCallsMessage = () => {
     switch (type) {
-      case 'ended':
-        return 'No Previous Calls';
-      case 'upcoming':
-        return 'No Upcoming Calls';
-      case 'recordings':
-        return 'No Recordings';
+      case 'Terminé':
+        return 'Aucun appel précédent';
+      case 'Prochain':
+        return 'Aucun appel à venir';
+      case 'enregistrements':
+        return 'Aucun enregistrement';
       default:
         return '';
     }
@@ -53,7 +53,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
       setRecordings(recordings);
     };
 
-    if (type === 'recordings') {
+    if (type === 'enregistrements') {
       fetchRecordings();
     }
   }, [type, callRecordings]);
@@ -70,31 +70,31 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
           <MeetingCard
             key={(meeting as Call).id}
             icon={
-              type === 'ended'
+              type === 'Terminé'
                 ? '/icons/previous.svg'
-                : type === 'upcoming'
+                : type === 'Prochain'
                   ? '/icons/upcoming.svg'
                   : '/icons/recordings.svg'
             }
             title={
               (meeting as Call).state?.custom?.description ||
               (meeting as CallRecording).filename?.substring(0, 20) ||
-              'No Description'
+              'Aucune description'
             }
             date={
               (meeting as Call).state?.startsAt?.toLocaleString() ||
               (meeting as CallRecording).start_time?.toLocaleString()
             }
-            isPreviousMeeting={type === 'ended'}
+            isPreviousMeeting={type === 'Terminé'}
             link={
-              type === 'recordings'
+              type === 'enregistrements'
                 ? (meeting as CallRecording).url
                 : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}`
             }
-            buttonIcon1={type === 'recordings' ? '/icons/play.svg' : undefined}
-            buttonText={type === 'recordings' ? 'Play' : 'Start'}
+            buttonIcon1={type === 'enregistrements' ? '/icons/play.svg' : undefined}
+            buttonText={type === 'enregistrements' ? 'Lire' : 'Start'}
             handleClick={
-              type === 'recordings'
+              type === 'enregistrements'
                 ? () => router.push(`${(meeting as CallRecording).url}`)
                 : () => router.push(`/meeting/${(meeting as Call).id}`)
             }
