@@ -195,7 +195,8 @@ CLERK_SECRET_KEY=
 # Intégration du SDK vidéo GetStream:
 
 Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
---[Stream React Video SDK Docs](https://getstream.io/video/docs/react/basics/installation/)
+
+- [Stream React Video SDK Docs](https://getstream.io/video/docs/react/basics/installation/)
 
 ## 1. Inscription à GetStream et clés API
 
