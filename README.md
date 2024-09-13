@@ -184,7 +184,11 @@ CLERK_SECRET_KEY=
       <SignIn />
     </main>
   );
+<<<<<<< HEAD
   }
+=======
+}
+>>>>>>> c1b6e02c277f04717c068088c48c73603cc5c279
 ```
 - Faites la même chose pour le dossier sign-up en remplaçant SignIn par SignUp et SignInPage par SignUpPage.
 
