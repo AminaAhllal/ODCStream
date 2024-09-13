@@ -14,7 +14,7 @@ const Sidebar = () => {
     padding: '1rem',
     borderRadius: '0.5rem',
     justifyContent: 'flex-start',
-    transition: 'background-color 0.3s ease', 
+    transition: 'background-color 0.4s ease', 
   };
 
   return (
