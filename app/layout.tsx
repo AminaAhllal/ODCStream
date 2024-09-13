@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "MEETUP",
   description: "Application de appels vidéo",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/icons/video-recorder.svg",
   },
 };
 
