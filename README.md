@@ -64,65 +64,61 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_STREAM_API_KEY=
 STREAM_SECRET_KEY=
 ```
-Remplacez les valeurs de remplacement par vos identifiants réels Clerk et GetStream. Vous pouvez obtenir ces identifiants en vous inscrivant sur le site web de [Clerk](https://clerk.com/) et de [Getstream](https://getstream.io/).
+Replace the placeholder values with your actual Clerk and GetStream credentials. You can obtain these by signing up on the [Clerk](https://clerk.com/)  and [Getstream](https://getstream.io/) websites.
 
-# ⏩**Avant de lancer le projet**
+# ⏩**Before Launching the Project**
 
-Pour bénéficier des dernières fonctionnalités et corrections de bugs, il est recommandé de rester à jour avec les versions les plus récentes du projet. Assurez-vous d'exécuter les commandes suivantes pour mettre à jour le projet avant de le lancer :
+To ensure access to the latest features and bug fixes, it is recommended to stay up to date with the project's latest versions. Run the following commands to update the project before launching:
 ```bash
 npm i next@latest
 ```
-## **🔍 Visualiser le Projet**
+## **🔍 View the Project**
 
-Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour visualiser le projet.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-## **🔗 Liens**
+## **🔗 Resources**
 
-Les ressources publiques utilisées dans le projet peuvent être trouvées [ici](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
+Public resources used in the project can be found [here](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
 
-# **🛠️ Processus de Création de l'App Zoom Clone**
-1 - Creer un dossier sous le nom Zoom-Clone.
+# **🛠️ Zoom Clone App Creation Process**
+1 - Create a folder named Zoom-Clone..
 
-2 - Accédez au site [Shadcn/ui](https://ui.shadcn.com/docs/installation/next),copier la commande suivant et remplacer (my-app) par ./:
-```bash
+2 - Access [Shadcn/ui](https://ui.shadcn.com/docs/installation/next), copy the command below, and replace my-app with ./:
 npx create-next-app@latest my-app --typescript --tailwing --eslint 
 ```
-3 - Pour initialiser le projet avec Shadcn UI utilisez la commande:
+3 -To initialize the project with Shadcn UI, use the command:
 ```bash
 npx shadcn-ui@latest init
 ```
 
-## 📜**Sheet**
-Étend le composant Dialog pour afficher du contenu qui complète le contenu principal de l'écran.
+## 📜**Sheet Component**
+Extends the Dialog component to display complementary content alongside the main screen content.
 
 **Installation**
 ```bash
 npx shadcnui-@latestadd sheet
 ```
 
-# 🔑Intégration du Clerk:
+# 🔑Clerk Integration::
 
-# 1 **Installer @clerk/nextjs**
+# 1 **Install @clerk/nextjs**
 ```bash
 npm install @clerk/nextjs
 ```
 
 # 2 ⚙️ Environment Variables Configuration
 
-Ajoutez les clés suivantes à votre fichier **.env Vous pouvez toujours retrouver ces clés sur la page des clés API de votre tableau de bord Clerk.
+Add the following keys to your .env file. You can find these on your Clerk dashboard's API keys page.
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 ```
 
-# 3 **🛠️ Ajouter un Middleware à votre Application**
-- Créer un Fichier Middleware
+# 3 **🛠️Add Middleware to Your Application**
+- Create a middleware file named middleware.ts at the root of your project.
 
-- Créez un fichier nommé **middleware.ts** à la racine de votre projet.
+- Export the Clerk middleware helper:
 
-- Exporter le Middleware de Clerk
-
-- Dans votre fichier middleware.ts, exportez l'assistant clerkMiddleware() de Clerk :
 ```bash
   import { clerkMiddleware } from '@clerk/nextjs/server'
 
@@ -138,16 +134,16 @@ CLERK_SECRET_KEY=
 }
 ```
 
-# **Sign into clerk account**
+# **Sign into Clerk**
 - Go to [Clerk](https://clerk.com/)
-- Cliquez sur Dashboard après avoir créé votre compte.
--Cliquez sur Create application.
--Choisissez vos options de connexion et ajoutez le nom de votre application.
+- Click Dashboard after creating your account.
+- Click Create Application.
+- Choose your sign-in options and add your app name.
 
 ![Capre](https://github.com/user-attachments/assets/f1b59aaa-d386-4490-ac1c-89df6b424857)
 
--Ensuite, copiez vos propres variables d'environnement personnalisées.
--Allez dans le fichier middleware.ts et ajoutez :
+- Copy your custom environment variables.
+- In the middleware.ts  file, add:
   ```bash
   import { clerkMiddleware,createRouterMatcher } from '@clerk/nextjs/server'
   const protectedRoutes = createRouterMatcher([
@@ -169,52 +165,45 @@ CLERK_SECRET_KEY=
     ],
   }
   ```
-- Allez dans **.env** and add
+- In the **.env** file, add:
   ```bash
   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
   ```
--  Allez dans **sign-in** folder and add a folder named **[[...sign-in]]** and add a **page.tsx** inside that forlder then add this code
+- For the sign-in folder, create a folder named **[[...sign-in]]**, and inside, add a file **page.tsx** with this code:
   ```bash
-  import { SignIn } from '@clerk/nextjs';
+    import { SignIn } from '@clerk/nextjs';
+    
+    export default function SiginInPage() {
+      return (
+        <main className="flex h-screen w-full items-center justify-center">
+          <SignIn />
+        </main>
+      );
+  }```
+- Do the same for the sign-up folder, replacing SignIn with SignUp and SignInPage with SignUpPage.
 
-  export default function SiginInPage() {
-  return (
-    <main className="flex h-screen w-full items-center justify-center">
-      <SignIn />
-    </main>
-  );
-<<<<<<< HEAD
-  }
-=======
-}
->>>>>>> c1b6e02c277f04717c068088c48c73603cc5c279
-```
-- Faites la même chose pour le dossier sign-up en remplaçant SignIn par SignUp et SignInPage par SignUpPage.
+# GetStream Video SDK Integration:
 
-# Intégration du SDK vidéo GetStream:
-
-Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre projet React, permettant la création et la gestion d'appels vidéo.
+This guide covers steps to integrate the GetStream Video SDK into your React project, enabling video calls.
 
 - [Stream React Video SDK Docs](https://getstream.io/video/docs/react/basics/installation/)
 
-## 1. Inscription à GetStream et clés API
+## 1. Sign up for GetStream and API keys
 
 
 ![Nouveau projet (2)](https://github.com/user-attachments/assets/4c63d475-93c2-4c0a-8098-375100c7bb35)
 
 
 
-1. **Inscrivez-vous** : [GetStream.io](https://getstream.io/)  
-   Créez un compte pour accéder aux clés API.
+1. **Sign Up at** : [GetStream.io](https://getstream.io/)  
 
-2. **Obtenez les clés API** :  
-   Allez dans **Tableau de bord** > **Application de production** pour trouver vos clés API :
-   - **Clé API publique**
-   - **Clé secrète**
+2. **Find your Public API Key and Secret Key in Dashboard > Production App.I** :  
+   - **Public API Key**
+   - **Secret Key**
 
-3. **Ajoutez les clés API dans `.env`** :
-   Créez un fichier `.env` à la racine de votre projet et ajoutez les clés :
+3. **Add the keys to your .env file:** :
+   At the root of your project, create a new file named .env:
 
    ```bash
    NEXT_PUBLIC_STREAM_API_KEY=your_api_public_key
@@ -222,46 +211,45 @@ Ce guide décrit les étapes pour intégrer le SDK vidéo GetStream dans votre p
 
 ## 2. Installation
 
-Installez les packages nécessaires pour les opérations côté client et côté serveur.
+Install the required packages for both client and server operations.
 
-### Installer le SDK vidéo React GetStream
+### Client-Side React SDK Installation
 
-Avec **yarn** :
+Using **yarn** :
 
 ```bash
 yarn add @stream-io/video-react-sdk
 ```
 
-Ou avec npm :
+Or using npm: :
 
 ```bash
 npm install @stream-io/video-react-sdk
 ```
 
-### Installer le SDK Node GetStream
-Pour les opérations côté serveur, installez le SDK Node GetStream :
+### Server-Side Node SDK Installation: 
+For server operations, install the GetStream Node SDK:
 
 ```bash
 npm install @stream-io/node-sdk
 ```
 
-## 3. Configuration du client
-- Créer un fournisseur de client Stream
-- Créez un dossier nommé providers à la racine de votre projet.
-- À l'intérieur du dossier providers, créez un fichier nommé StreamClientProvider.tsx.
-- Configurez le StreamClientProvider en utilisant les clés API de votre fichier .env
+## 3. Client Configuration
+-Create a StreamClientProvider.
+-Create a folder called providers and inside it, add a file named StreamClientProvider.tsx.
+-Configure the StreamClientProvider using the API keys from your .env file.
 
 ## 4. Server-side Client
-- Créez un dossier nommé actions, et à l'intérieur, ajoutez un fichier Stream.actions.ts pour gérer les opérations côté serveur, notamment la création d'utilisateurs et de jetons utilisateurs [creatToken](https://getstream.io/video/docs/api/#creating-users-and-user-tokens).
+- reate a folder called actions and inside it, add a file Stream.actions.ts to handle server-side operations, such as creating users and user tokens [creatToken](https://getstream.io/video/docs/api/#creating-users-and-user-tokens).
 
-## 5. Créer une réunion
-- Pour créer une nouvelle réunion (appel vidéo), encapsulez votre application entière dans le composant StreamVideoProvider. Ensuite, créez une fonction createMeeting pour initialiser l'appel [creatacall](https://getstream.io/video/docs/api/#creating-a-call)
+## 5. Create a Meeting
+- To create a new video call, wrap your entire app in the StreamVideoProvider component and create a createMeeting function to initiate the call [creatacall](https://getstream.io/video/docs/api/#creating-a-call)
 
-## 6. Récupérer les appels par ID
-- Pour récupérer un appel par son ID, créez un hook personnalisé useGetCallById qui filtre les appels en fonction de l'ID donné 
+## 6. Retrieve Calls by ID
+- To retrieve a call by its ID, create a custom hook useGetCallById that filters calls by the given ID. 
 
-## 7. Emballer votre application
-Assurez-vous d'encapsuler votre application entière dans le StreamClientProvider pour garantir l'accès au client Stream dans toute votre application.
+## 7. Wrap Your Application 
+Ensure your entire app is wrapped in the StreamClientProvider to guarantee access to the Stream client throughout your application.
 
 ```bash
 
