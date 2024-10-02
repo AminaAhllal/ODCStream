@@ -48,12 +48,12 @@ cd Zoom-Clone
 ```
 
 🛠️**Installation**
-Installez les dépendances du projet en utilisant npm :
+ Install project dependencies using npm:
 ```bash
 npm install
 ```
-⚙️**Configuration des Variables d'Environnement**
-Créez un nouveau fichier nommé .env à la racine de votre projet et ajoutez le contenu suivant :
+⚙️**Environment Variables Configuration**
+Create a new file called .env in the root directory of your project and add the following:
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
