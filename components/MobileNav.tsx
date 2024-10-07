@@ -31,7 +31,7 @@ const MobileNav = () => {
               height={80}
               alt="yoom logo"
             />
-            <p className="text-[26px] font-extrabold text-white">MEETUP</p>
+            <p className="text-[26px] font-extrabold text-white">ODCStream</p>
           </Link>
           <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto">
             <SheetClose asChild>
