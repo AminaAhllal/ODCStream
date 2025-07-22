@@ -80,7 +80,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 Public resources used in the project can be found [here](https://drive.google.com/file/d/1ofTpWii_sCIdJ14uQ431xWVXpYgjtQ8Q/view).
 
-# **🛠️ Zoom Clone App Creation Process**
+# **🛠️ Odcstream App Creation Process**
 1 - Create a folder named Zoom-Clone..
 
 2 - Access [Shadcn/ui](https://ui.shadcn.com/docs/installation/next), copy the command below, and replace my-app with ./:
